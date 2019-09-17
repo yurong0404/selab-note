@@ -56,6 +56,6 @@ source code: https://github.com/sriniiyer/codenn<br>
 
 * [9] A Convolutional Attention Network for Extreme Summarization of Source Code, 2016<br>
 *Miltiadis Allamanis et al.*<br>
-paper: https://arxiv.org/pdf/1602.03001.pdf
-source code: https://github.com/mast-group/convolutional-attention
+paper: https://arxiv.org/pdf/1602.03001.pdf<br>
+source code: https://github.com/mast-group/convolutional-attention<br>
 > 使用CNN+Attention預測function名稱
