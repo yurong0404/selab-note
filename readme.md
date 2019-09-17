@@ -51,7 +51,7 @@ source code: https://github.com/rbavishi/Context2Name<br>
 *Srinivasan Iyer et al.*<br>
 paper: https://www.aclweb.org/anthology/P16-1195<br>
 source code: https://github.com/sriniiyer/codenn<br>
-> Code caption，使用深度學習之技術描述一段code在做什麼事情。
+> Code caption，使用深度學習之技術描述一段code在做什麼事情，縮寫CODE-NN。
 ***
 
 * [9] A Convolutional Attention Network for Extreme Summarization of Source Code, 2016<br>
@@ -66,20 +66,22 @@ source code: https://github.com/mast-group/convolutional-attention<br>
 paper: https://arxiv.org/pdf/1811.07234.pdf<br>
 ***
 
-* [11] A parallel corpus of Python functions and documentation strings for automated code documentation and code generation<br>
+* [11] A parallel corpus of Python functions and documentation strings for automated code documentation and code generation, 2017<br>
 *Antonio Valerio Miceli Barone and Rico Sennrich*<br>
 paper: https://arxiv.org/pdf/1707.02275.pdf<br>
 dataset: https://github.com/EdinburghNLP/code-docstring-corpus<br>
 > 建立source code summary dataset
 ***
 
-* [12] Deep Code Comment Generation<br>
+* [12] Deep Code Comment Generation, 2018<br>
 *Xing Hu et al.*<br>
 paper: https://xin-xia.github.io/publication/icpc182.pdf<br>
-> Source code summarization
+dataset: https://github.com/xing-hu/DeepCom<br>
+> Source code summarization，縮寫DeepCom。
 ***
 
-* [13] Automatic Source Code Summarization with Extended Tree-LSTM<br>
+* [13] Automatic Source Code Summarization with Extended Tree-LSTM, 2019<br>
 *Yusuke Shido et al.*<br>
 paper: https://arxiv.org/pdf/1906.08094.pdf<br>
-> Source code summarization
+source code: https://github.com/sh1doy/summarization_tf<br>
+> Source code summarization，比DeepCom和CODE-NN強，dataset取自DeepCom。
