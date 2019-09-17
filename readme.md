@@ -86,3 +86,9 @@ dataset: https://github.com/xing-hu/DeepCom<br>
 paper: https://arxiv.org/pdf/1906.08094.pdf<br>
 source code: https://github.com/sh1doy/summarization_tf<br>
 > Source code summarization，比DeepCom和CODE-NN強，dataset取自DeepCom。
+***
+
+* [14] Recommendations for Datasets for Source Code Summarization, 2019<br>
+*Alex LeClair, Collin McMillan*<br>
+paper: https://www.aclweb.org/anthology/N19-1394<br>
+> 待讀
