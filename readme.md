@@ -69,4 +69,5 @@ paper: https://arxiv.org/pdf/1811.07234.pdf<br>
 * [11] A parallel corpus of Python functions and documentation strings for automated code documentation and code generation<br>
 *Antonio Valerio Miceli Barone and Rico Sennrich*<br>
 paper: https://arxiv.org/pdf/1707.02275.pdf
+dataset: https://github.com/EdinburghNLP/code-docstring-corpus
 > 建立source code summary dataset
