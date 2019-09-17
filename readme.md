@@ -1,5 +1,5 @@
 ## 論文列表
-
+***
 * [1] A Framework for Software Defect Prediction and Metric Selection, 2017<br>
 *Shamsul Huda et al.*<br>
 paper: https://ieeexplore.ieee.org/abstract/document/8240899<br>
