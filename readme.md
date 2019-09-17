@@ -77,3 +77,9 @@ dataset: https://github.com/EdinburghNLP/code-docstring-corpus<br>
 *Xing Hu et al.*<br>
 paper: https://xin-xia.github.io/publication/icpc182.pdf<br>
 > Source code summarization
+***
+
+* [13] Automatic Source Code Summarization with Extended Tree-LSTM<br>
+*Yusuke Shido et al.*<br>
+paper: https://arxiv.org/pdf/1906.08094.pdf<br>
+> Source code summarization
