@@ -78,7 +78,7 @@ dataset: https://github.com/EdinburghNLP/code-docstring-corpus<br>
 *Xing Hu et al.*<br>
 paper: https://xin-xia.github.io/publication/icpc182.pdf<br>
 dataset: https://github.com/xing-hu/DeepCom<br>
-> Source code summarization，縮寫DeepCom。
+> Source code summarization，縮寫DeepCom，比CODE-NN強。
 ***
 
 * [13] Automatic Source Code Summarization with Extended Tree-LSTM, 2019<br>
