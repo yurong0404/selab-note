@@ -52,3 +52,10 @@ source code: https://github.com/rbavishi/Context2Name<br>
 paper: https://www.aclweb.org/anthology/P16-1195<br>
 source code: https://github.com/sriniiyer/codenn<br>
 > Code caption，使用深度學習之技術描述一段code在做什麼事情。
+***
+
+* [9] A Convolutional Attention Network for Extreme Summarization of Source Code, 2016<br>
+*Miltiadis Allamanis et al.*<br>
+paper: https://arxiv.org/pdf/1602.03001.pdf
+source code: https://github.com/mast-group/convolutional-attention
+> 使用CNN+Attention預測function名稱
