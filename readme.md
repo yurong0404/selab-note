@@ -70,7 +70,7 @@ paper: https://arxiv.org/pdf/1811.07234.pdf<br>
 *Antonio Valerio Miceli Barone and Rico Sennrich*<br>
 paper: https://arxiv.org/pdf/1707.02275.pdf<br>
 dataset: https://github.com/EdinburghNLP/code-docstring-corpus<br>
-> 建立source code summary dataset
+> Yao Wan[10]使用此論文之dataset
 ***
 
 * [12] Deep Code Comment Generation, 2018<br>
