@@ -59,3 +59,14 @@ source code: https://github.com/sriniiyer/codenn<br>
 paper: https://arxiv.org/pdf/1602.03001.pdf<br>
 source code: https://github.com/mast-group/convolutional-attention<br>
 > 使用CNN+Attention預測function名稱
+***
+
+* [10] Improving Automatic Source Code Summarization via Deep Reinforcement Learning, 2018<br>
+*Yao Wan et al.*<br>
+paper: https://arxiv.org/pdf/1811.07234.pdf<br>
+***
+
+* [11] A parallel corpus of Python functions and documentation strings for automated code documentation and code generation<br>
+*Antonio Valerio Miceli Barone and Rico Sennrich*<br>
+paper: https://arxiv.org/pdf/1707.02275.pdf
+> 建立source code summary dataset
