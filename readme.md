@@ -7,7 +7,8 @@ paper: https://ieeexplore.ieee.org/abstract/document/8240899<br>
 
 * [2] Learning a Metric for Code Readability, 2010<br>
 *Raymond P. L. Buse and Westley R. Weimer*<br>
-paper: http://www.arrestedcomputing.com/readability<br>
+paper: https://web.eecs.umich.edu/~weimerw/p/weimer-tse2010-readability-preprint.pdf<br>
+source code: http://www.arrestedcomputing.com/readability<br>
 > Buse為程式可讀性分類模型之始祖，使用數個structural feature做為分類可讀性之依據，使用logistic regression訓練二元分類器，其搜集100份Java snippets之可讀性評分作為訓練用途。
 ***
 
@@ -20,19 +21,21 @@ paper: https://web.eecs.umich.edu/~weimerw/students/dorn-mcs-paper.pdf<br>
 * [4] Improving Code Readability Models with Textual Features, 2016<br>
 *Simone Scalabrino et al.*<br>
 paper: http://www.cs.wm.edu/~denys/pubs/ICPC'16-Readability.pdf<br>
+dataset: https://dibt.unimol.it/icpc2016/appendix.html<br>
 > 提出幾個textual feature做為度量software readability的依據，再加上Buse提出的feature，訓練成程式可讀性的分類器，使用Java file作為訓練dataset
 ***
 
 * [5] Improving code readability classification using convolutional neural networks, 2018<br>
 *Qing Mi et al.*<br>
 paper: https://www.sciencedirect.com/science/article/pii/S0950584918301496<br>
+source code: https://github.com/CityU-QingMi/DeepCRM<br>
 > 第一位使用深度學習訓練程式可讀性之研究，此篇研究使用CNN，並使用CheckStyle和PMD兩款tool自動標記訓練資料(25000筆Java file)，為當前可讀性分類準確度最高，其使用token level、character level、和node level (abstract syntax tree)三種表示法做訓練。
 ***
 
 * [6] code2vec: Learning Distributed Representations of Code, 2018<br>
 *URI ALON et al.*<br>
 paper: https://arxiv.org/pdf/1803.09473.pdf<br>
-sourece code: https://github.com/tech-srl/code2vec<br>
+source code: https://github.com/tech-srl/code2vec<br>
 demo: https://code2vec.org/ <br>
 > 將source code透過深度學習模型，學習function內之語句內容，並預測該function名稱，其應用可用於大範圍之source code分析研究，例如可幫助工程師檢測function取名是否恰當，亦可幫助defect prediction、code completion等研究。其深度學習模型使用兩層full connected layer和attention機制。
 ***
