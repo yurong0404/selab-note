@@ -51,7 +51,7 @@ source code: https://github.com/rbavishi/Context2Name<br>
 *Srinivasan Iyer et al.*<br>
 paper: https://www.aclweb.org/anthology/P16-1195<br>
 source code: https://github.com/sriniiyer/codenn<br>
-> Code caption，使用深度學習之技術描述一段code在做什麼事情，縮寫CODE-NN。
+> Code caption，使用深度學習之技術描述一段code在做什麼事情，使用RNN+attention+embedding，縮寫CODE-NN。Dataset使用C#和SQL，但大部分code都不完整，難以生成語法樹。
 ***
 
 * [9] A Convolutional Attention Network for Extreme Summarization of Source Code, 2016<br>
