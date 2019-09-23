@@ -78,7 +78,7 @@ dataset: https://github.com/EdinburghNLP/code-docstring-corpus<br>
 *Xing Hu et al.*<br>
 paper: https://xin-xia.github.io/publication/icpc182.pdf<br>
 dataset: https://github.com/xing-hu/DeepCom<br>
-> Source code summarization，縮寫DeepCom，比CODE-NN強。
+> Source code summarization，縮寫DeepCom，比CODE-NN強，使用了自創的方法描述AST，因為傳統travesal approach(pre-order、post-order)還原的AST無法唯一，使用Seq2seq model，encoder和decoder都是LSTM，word embedding和hidden state都是512維，使用BLEU度量生成的句子。
 ***
 
 * [13] Automatic Source Code Summarization with Extended Tree-LSTM, 2019<br>
