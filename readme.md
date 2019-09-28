@@ -91,6 +91,7 @@ source code: https://github.com/sh1doy/summarization_tf<br>
 * [14] Recommendations for Datasets for Source Code Summarization, 2019<br>
 *Alex LeClair, Collin McMillan*<br>
 paper: https://www.aclweb.org/anthology/N19-1394<br>
+data: http://leclair.tech/data/funcom/<br>
 > 待讀
 ***
 
