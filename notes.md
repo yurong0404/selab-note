@@ -1,23 +1,29 @@
 ## Tensorflow-gpu環境安裝指南<br>
-1. 首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件<br>
+1. 首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件，因此先把他們通通解安裝一遍，確保你沒安裝。這裡我假設你已經有python3和pip安裝工具。<br>
+
 ```console
 $ python3 -m pip uninstall keras
 $ python3 -m pip uninstall tensorflow
 $ python3 -m pip uninstall tensorflow-gpu
 ```
-2. 開始安裝tensorflow-gpu(如果你要用gpu跑就必須裝tensorflow-gpu，但如果你想用CPU跑也沒差，就裝tensorflow或tensorflow-gpu都可以)<br>
+2. 開始安裝tensorflow-gpu(如果你要用GPU訓練模型就必須裝tensorflow-gpu，但如果你想用CPU跑的話，就裝tensorflow或tensorflow-gpu都可以)，如果你有指定的tensorflow版本就後面加'=='和版本編號<br>
 ```console
+$ python3 -m pip install tensorflow-gpu==  # 如果你想看有哪些版本編號，可以這樣查
 $ python3 -m pip install tensorflow-gpu
+$ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
 ```
-3. 裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，最直接查詢的方法如下<br>
+3. 裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，有的還不一定正確，最直接查詢的方法如下，你需要的版本讓你自己的電腦來告訴你<br>
 ```console
 $ python3
 >>> import tensorflow
 ```
-此時若你沒安裝cuda，必定會跳出錯誤訊息，如下：<br>
+此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如下的訊息：<br>
 
 ```console
->>> ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory
+>>> import tensorflow
+blahblahblah
+ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory
+blahblahblah
 ```
 此行代表你需安裝cuda 9.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔
   
