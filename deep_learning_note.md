@@ -104,7 +104,7 @@ $ python3
 
 載好cudnn後很簡單，就像下面這樣安裝<br>
 ```console
-$ tar -xzvf cudnn-10.0-linux-x64-v7.tgz
+$ tar -xzvf cudnn-9.0-linux-x64-v7.tgz
 $ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
@@ -121,7 +121,7 @@ $ python3
 >>> tf.test.is_gpu_avaiable()
 ```
 如果回傳true的話，恭喜你能用gpu跑tensorflow了，那你可以關掉這個筆記了<br>
-如果你很不幸，這函式回傳false的話，那真的見鬼了這樣，你也能關掉這筆記了另求解了，因為我不知道怎幫你QQ。<br>
+如果你很不幸，這函式回傳false的話，那真的見鬼了這樣，你也能關掉這筆記另求解了，因為我不知道怎幫你QQ。<br>
   
 
 ## Attention layer<br>
