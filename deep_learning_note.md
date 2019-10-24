@@ -75,7 +75,7 @@ $ sudo service lightdm stop
 ```
 ========= 以上做完再執行cuda安裝檔 ==============<br>
 ```console
-$ sudo sh ./cuda_10.0.130_410.48_linux.run   # 執行你的cuda安裝檔
+$ sudo sh ./cuda_10.0.130_410.48_linux.run
 ```
 剛剛上面有關掉X server的人，裝完cuda後可以再把它打開了
 ```console
@@ -94,16 +94,17 @@ $ source /etc/profile
 ```
 到這，沒意外的話，你算安裝cuda成功了。
 
+### Step 5
 ```console
 $ python3
 >>> import tensorflow
 ```
-### Step 5
 安裝好cuda後，開始安裝cudnn。首先，測試一下，還有沒有跳出 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory的error，如果沒有，代表你cuda安裝成功。但沒意外的話你會改跳 ImportError: libcudnn.so.7: cannot open shared object file: No such file or dictionary 這樣的error，這意思是說你要裝cudnn 7的版本，到這邊隨便下載cudnn 7.X for cuda 10.0的檔案 https://developer.nvidia.com/rdp/cudnn-archive ，但當然如果你需要的cudnn不是7或是cuda不是10.0，那你就自己變通一下載你要的版本，下載前必須註冊登入NVIDIA帳號，沒帳號就安裝一下。<br><br>
+
 
 載好cudnn後很簡單，就像下面這樣安裝<br>
 ```console
-$ tar -xzvf cudnn-9.0-linux-x64-v7.tgz
+$ tar -xzvf cudnn-10.0-linux-x64-v7.tgz
 $ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
