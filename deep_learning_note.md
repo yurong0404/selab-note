@@ -20,15 +20,14 @@ $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
 ### Step 3
 裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，有的還不一定正確，最直接查詢的方法如下，你需要的版本讓你自己的電腦來告訴你。<br>
 
-```python
->>> import tensorflow
 ```console
+>>> import tensorflow
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
 此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如上的訊息：<br>
 此行代表你需安裝cuda 10.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔，這我這邊是載runfile的版本。<br>
 要是你沒有跳錯誤訊息，大概是tensorflow想用CPU跑，所以讓你過了，那你就在python shell用下面這個指令硬是trigger一下GPU，他就會跳錯誤訊息了。<br>
-```python
+```console
 >>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
@@ -84,7 +83,7 @@ $ sudo service lightdm start
 ```
 安裝過程，他大概會問你要不要建link路徑，選yes或no都沒差，還有安裝CUDA sample什麼的，不裝也沒差。<br>
 你裝完後就可以從tty1跳回GUI介面了，ctrl+alt+f7跳回GUI。裝完他最後的訊息應該有叫你要加cuda的資料夾到環境變數，請到~/.profile或者/etc/profile擇一檔案最底下加入這兩行，如果你cuda版本不是10.0就自己改一下。小知識：~/.profile會在你帳戶登入時執行，/etc/profile則是for all users。<br>
-```bash
+```console
 export PATH=$PATH:/usr/local/cuda-10.0/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
 ```
@@ -111,7 +110,7 @@ $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ```
 裝完後理論上就好了，測試一下你能不能import tensorflow了吧
 ```python
->>>import tensorflow
+>>> import tensorflow
 ```
 如果還不能import，就見鬼了。<br>
 最後，執行這個確認你的tensorflow可以用GPU跑<br>
