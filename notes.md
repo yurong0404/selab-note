@@ -32,7 +32,7 @@ ImportError: libcublas.so.10.0: cannot open shared object file: No such file or 
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
 ### Step 4
-安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda會有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
+安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
 如果你不知道你目前的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本，像我的是410.79。<br>
 ```console
 $ nvidia-smi
@@ -61,7 +61,8 @@ $ nvidia-smi
 +-----------------------------------------------------------------------------+
 ```
 如果說你還沒有裝GPU的driver或你的driver版本太舊的話，也沒關係，cuda的安裝檔執行後一開始就會先問你要不要幫你裝顯卡驅動，你可以選yes，他就會自己幫你裝好對的驅動版本，如果你本來的驅動程式版本就夠新就選no。<br>
-這邊要特別注意，如果你有要裝顯卡驅動的話，你要先暫時跳到tty的環境裝cuda和顯卡驅，ctrl+alt+f1跳到tty1，否則你在GUI的介面安裝會fail。<br>
+這邊要特別注意，如果你有要裝顯卡驅動的話，你要先暫時跳到tty的環境裝cuda和顯卡驅動，否則你在GUI的介面安裝會fail，請用ctrl+alt+f1跳到tty1。<br>
+如果你沒要裝驅動，就直接在GUI介面安裝cuda就好<br>
 
 ====== 如果你要裝驅動，先執行這段，如果沒有要裝驅動，就可以直接執行cuda安裝檔 =======<br>
 ```console
