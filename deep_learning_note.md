@@ -12,7 +12,7 @@ $ python3 -m pip uninstall tensorflow-gpu
 ```
 ### Step 2
 開始安裝tensorflow-gpu(如果你要用GPU訓練模型就必須裝tensorflow-gpu，但如果你想用CPU跑的話，就裝tensorflow或tensorflow-gpu都可以)，如果你有指定的tensorflow版本就後面加'=='和版本編號<br>
-```bat
+```bash
 $ python3 -m pip install tensorflow-gpu==  # 如果你想看有哪些版本編號，可以這樣查
 $ python3 -m pip install tensorflow-gpu   # 如果沒特別指定版本，就這樣裝，自動安裝最新的版本
 $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
@@ -34,7 +34,7 @@ ImportError: libcublas.so.10.0: cannot open shared object file: No such file or 
 ### Step 4
 安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
 如果你不知道你目前的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本，像我的是410.79。<br>
-```console
+```bash
 $ nvidia-smi
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 410.79       Driver Version: 410.79       CUDA Version: 10.0     |
@@ -66,29 +66,29 @@ $ nvidia-smi
 
 ====== 如果你要裝驅動，先執行這段，如果沒有要裝驅動，就可以直接執行cuda安裝檔 =======<br>
 如果你顯卡驅動版本太舊，先執行這行刪除你原本的驅動，如果最後訊息有跳出autoremove什麼的，就照他說的執行。<br>
-```console
+```bash
 $ sudo apt-get purge nvidia*
 ```
 裝顯卡驅動前，請必先照這指令執行，這指令在關掉 X server，別問我 X server是什麼，應該是跟GUI介面顯示相關的東西，關掉後你的GUI介面(tty7)會先暫時失效<br>
-```console
+```bash
 $ sudo service lightdm stop
 ```
 ========= 以上做完再執行cuda安裝檔 ==============<br>
-```console
+```bash
 $ sudo sh ./cuda_10.0.130_410.48_linux.run
 ```
 剛剛上面有關掉X server的人，裝完cuda後可以再把它打開了
-```console
+``` bash
 $ sudo service lightdm start
 ```
 安裝過程，他大概會問你要不要建link路徑，選yes或no都沒差，還有安裝CUDA sample什麼的，不裝也沒差。<br>
 你裝完後就可以從tty1跳回GUI介面了，ctrl+alt+f7跳回GUI。裝完他最後的訊息應該有叫你要加cuda的資料夾到環境變數，請到~/.profile或者/etc/profile擇一檔案最底下加入這兩行，如果你cuda版本不是10.0就自己改一下。小知識：~/.profile會在你帳戶登入時執行，/etc/profile則是for all users。<br>
-```console
+```bash
 export PATH=$PATH:/usr/local/cuda-10.0/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
 ```
 加完後，在terminal執行它一下<br>
-```console
+```bash
 $ source ~/.profile
 $ source /etc/profile
 ```
@@ -102,7 +102,7 @@ $ source /etc/profile
 
 
 載好cudnn後很簡單，就像下面這樣安裝<br>
-```console
+```bash
 $ tar -xzvf cudnn-9.0-linux-x64-v7.tgz
 $ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
 $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
