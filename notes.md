@@ -1,3 +1,8 @@
+## Tensorflow-gpu環境安裝指南<br>
+1. 首先確保你還沒有安裝tensorflow或tensorflow-gpu<br>
+<console>
+  
+
 ## Attention layer<br>
 video: https://youtu.be/oaV_Fv5DwUM<br>
 > Attention用在model能夠根據input自行調整input token的權重，做法為多加一層layer訓練給予input的權重。<br><br>
