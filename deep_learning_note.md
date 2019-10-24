@@ -1,4 +1,4 @@
-## Tensorflow-gpu環境安裝 on Ubuntu 指南<br>
+## Tensorflow-gpu 環境安裝 on Ubuntu 指南<br>
 安裝深度學習環境需要有三樣東西，tensorflow、cuda和cudnn，cuda或tensorflow哪個先裝並不影響，但基於某些原因，我選擇先裝tensorflow。<br>
 
 ### Step 1
