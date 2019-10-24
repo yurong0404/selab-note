@@ -5,14 +5,14 @@
 首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件，因此先把他們通通解安裝一遍，確保你沒安裝。這裡我假設你已經有python3和pip安裝工具。<br>
 (小知識：請不要重複安裝tensorflow的各種不同版本，很容易出問題，請一層一層解安裝完，)<br>
 
-```console
+```bash
 $ python3 -m pip uninstall keras
 $ python3 -m pip uninstall tensorflow
 $ python3 -m pip uninstall tensorflow-gpu
 ```
 ### Step 2
 開始安裝tensorflow-gpu(如果你要用GPU訓練模型就必須裝tensorflow-gpu，但如果你想用CPU跑的話，就裝tensorflow或tensorflow-gpu都可以)，如果你有指定的tensorflow版本就後面加'=='和版本編號<br>
-```console
+```bat
 $ python3 -m pip install tensorflow-gpu==  # 如果你想看有哪些版本編號，可以這樣查
 $ python3 -m pip install tensorflow-gpu   # 如果沒特別指定版本，就這樣裝，自動安裝最新的版本
 $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
