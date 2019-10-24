@@ -21,9 +21,14 @@ ImportError: libcublas.so.10.0: cannot open shared object file: No such file or 
 ```
 此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如上的訊息：<br>
 此行代表你需安裝cuda 10.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔，這我這邊是載runfile的版本<br>
+要是你沒有跳錯誤訊息，大概是tensorflow想用CPU跑，所以讓你過了，那你就在python shell用下面這個指令硬是trigger一下GPU，他就會跳錯誤訊息了<br>
+```console
+>>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
+ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
+```
 
 4. 安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda會有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
-如果你不知道你的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本:<br>
+如果你不知道你目前的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本，像我的是410.79<br>
 ```console
 $ nvidia-smi
 +-----------------------------------------------------------------------------+
@@ -50,11 +55,51 @@ $ nvidia-smi
 |    1     12590      C   /usr/bin/python3                             111MiB |
 +-----------------------------------------------------------------------------+
 ```
-如果說你還沒有裝GPU的driver的話，也沒關係，cuda的安裝檔執行後一開始就會先問你要不要幫你裝顯卡驅動，你可以選yes，他就會自己幫你裝好對的驅動版本<br>
+如果說你還沒有裝GPU的driver或你的driver版本太舊的話，也沒關係，cuda的安裝檔執行後一開始就會先問你要不要幫你裝顯卡驅動，你可以選yes，他就會自己幫你裝好對的驅動版本，如果你本來的驅動程式版本就夠新就選no<br>
+這邊要特別注意，如果你有要裝顯卡驅動的話，你要先暫時跳到tty的環境裝cuda和顯卡驅，ctrl+alt+f1跳到tty1，否則你在GUI的介面安裝會fail。<br>
+
+====== 如果你要裝驅動，先執行這段，如果沒有要裝驅動，就可以直接執行cuda安裝檔 =======<br>
 ```console
-sudo sh ./cuda_10.0.130_410.48_linux.run   # 執行你的cuda安裝檔
+$ sudo apt-get purge nvidia*  # 如果你顯卡驅動版本太舊，先執行這行刪除你原本的驅動，如果最後訊息有跳出autoremove什麼的，就照他說的執行。
+$ sudo service lightdm stop   # 裝顯卡驅動前，請必先照這指令執行，這指令在關掉 X server，別問我 X server是什麼，應該是跟螢幕顯示相關的東東
+```
+========= 以上做完再執行cuda安裝檔 ==============<br>
+```console
+$ sudo sh ./cuda_10.0.130_410.48_linux.run   # 執行你的cuda安裝檔
+```
+安裝過程，他大概會問你要不要建link路徑，選yes或no都沒差，還有安裝CUDA sample什麼的，不裝也沒差<br>
+你裝完後就可以從tty1跳回GUI介面了，ctrl+alt+f7跳回GUI。裝完他最後的訊息應該有叫你要加cuda的資料夾到環境變數，請到~/.profile或者/etc/profile擇一檔案最底下加入這兩行，如果你cuda版本不是10.0就自己改一下<br>
+```console
+export PATH=$PATH:/usr/local/cuda-10.0/bin
+export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
+```
+加完後，在terminal執行它一下<br>
+```console
+$ source ~/.profile
+$ source /etc/profile
+```
+到這，沒意外的話，你算安裝cuda成功了。
+
+```console
+$ python3
+>>> import tensorflow
 ```
 
+5. 安裝好cuda後，開始安裝cudnn。首先，測試一下，還有沒有跳出 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory的error，如果沒有，代表你cuda安裝成功。但沒意外的話你會改跳 ImportError: libcudnn.so.7: cannot open shared object file: No such file or dictionary 這樣的error，這意思是說你要裝cudnn 7的版本，到這邊隨便下載cudnn 7.X for cuda 10.0的檔案 https://developer.nvidia.com/rdp/cudnn-archive ，但當然如果你需要的cudnn不是7或是cuda不是10.0，那你就自己變通一下載你要的版本，下載前必須註冊登入NVIDIA帳號，沒帳號就安裝一下。<br><br>
+
+載好cudnn後很簡單，就像下面這樣安裝<br>
+```console
+$ tar -xzvf cudnn-9.0-linux-x64-v7.tgz
+$ sudo cp cuda/include/cudnn.h /usr/local/cuda/include
+$ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
+$ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
+```
+裝完後理論上就好了，測試一下你能不能import tensorflow了吧
+```console
+$ python3
+>>>import tensorflow
+```
+如果還不能import，就見鬼了。
   
 
 ## Attention layer<br>
