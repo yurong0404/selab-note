@@ -3,6 +3,7 @@
 
 ### Step 1
 首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件，因此先把他們通通解安裝一遍，確保你沒安裝。這裡我假設你已經有python3和pip安裝工具。<br>
+(小知識：請不要重複安裝tensorflow的各種不同版本，很容易出問題，請一層一層解安裝完，)<br>
 
 ```console
 $ python3 -m pip uninstall keras
@@ -17,22 +18,22 @@ $ python3 -m pip install tensorflow-gpu   # 如果沒特別指定版本，就這
 $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
 ```
 ### Step 3
-裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，有的還不一定正確，最直接查詢的方法如下，你需要的版本讓你自己的電腦來告訴你<br>
+裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，有的還不一定正確，最直接查詢的方法如下，你需要的版本讓你自己的電腦來告訴你。<br>
 
 ```console
 >>> import tensorflow
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
 此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如上的訊息：<br>
-此行代表你需安裝cuda 10.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔，這我這邊是載runfile的版本<br>
-要是你沒有跳錯誤訊息，大概是tensorflow想用CPU跑，所以讓你過了，那你就在python shell用下面這個指令硬是trigger一下GPU，他就會跳錯誤訊息了<br>
+此行代表你需安裝cuda 10.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔，這我這邊是載runfile的版本。<br>
+要是你沒有跳錯誤訊息，大概是tensorflow想用CPU跑，所以讓你過了，那你就在python shell用下面這個指令硬是trigger一下GPU，他就會跳錯誤訊息了。<br>
 ```console
 >>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
 ### Step 4
 安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda會有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
-如果你不知道你目前的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本，像我的是410.79<br>
+如果你不知道你目前的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本，像我的是410.79。<br>
 ```console
 $ nvidia-smi
 +-----------------------------------------------------------------------------+
@@ -59,7 +60,7 @@ $ nvidia-smi
 |    1     12590      C   /usr/bin/python3                             111MiB |
 +-----------------------------------------------------------------------------+
 ```
-如果說你還沒有裝GPU的driver或你的driver版本太舊的話，也沒關係，cuda的安裝檔執行後一開始就會先問你要不要幫你裝顯卡驅動，你可以選yes，他就會自己幫你裝好對的驅動版本，如果你本來的驅動程式版本就夠新就選no<br>
+如果說你還沒有裝GPU的driver或你的driver版本太舊的話，也沒關係，cuda的安裝檔執行後一開始就會先問你要不要幫你裝顯卡驅動，你可以選yes，他就會自己幫你裝好對的驅動版本，如果你本來的驅動程式版本就夠新就選no。<br>
 這邊要特別注意，如果你有要裝顯卡驅動的話，你要先暫時跳到tty的環境裝cuda和顯卡驅，ctrl+alt+f1跳到tty1，否則你在GUI的介面安裝會fail。<br>
 
 ====== 如果你要裝驅動，先執行這段，如果沒有要裝驅動，就可以直接執行cuda安裝檔 =======<br>
@@ -71,8 +72,8 @@ $ sudo service lightdm stop   # 裝顯卡驅動前，請必先照這指令執行
 ```console
 $ sudo sh ./cuda_10.0.130_410.48_linux.run   # 執行你的cuda安裝檔
 ```
-安裝過程，他大概會問你要不要建link路徑，選yes或no都沒差，還有安裝CUDA sample什麼的，不裝也沒差<br>
-你裝完後就可以從tty1跳回GUI介面了，ctrl+alt+f7跳回GUI。裝完他最後的訊息應該有叫你要加cuda的資料夾到環境變數，請到~/.profile或者/etc/profile擇一檔案最底下加入這兩行，如果你cuda版本不是10.0就自己改一下<br>
+安裝過程，他大概會問你要不要建link路徑，選yes或no都沒差，還有安裝CUDA sample什麼的，不裝也沒差。<br>
+你裝完後就可以從tty1跳回GUI介面了，ctrl+alt+f7跳回GUI。裝完他最後的訊息應該有叫你要加cuda的資料夾到環境變數，請到~/.profile或者/etc/profile擇一檔案最底下加入這兩行，如果你cuda版本不是10.0就自己改一下。<br>
 ```console
 export PATH=$PATH:/usr/local/cuda-10.0/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
@@ -103,7 +104,14 @@ $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 $ python3
 >>>import tensorflow
 ```
-如果還不能import，就見鬼了。
+如果還不能import，就見鬼了。<br>
+最後，執行這個確認你的tensorflow可以用GPU跑<br>
+```console
+>>> import tensorflow as tf
+>>> tf.test.is_gpu_avaiable()
+```
+如果回傳true的話，恭喜你能用gpu跑tensorflow了，那你可以關掉這個筆記了<br>
+如果你很不幸，這函式回傳false的話，那真的見鬼了這樣，你也能關掉這筆記了另求解了，因為我不知道怎幫你QQ。<br>
   
 
 ## Attention layer<br>
