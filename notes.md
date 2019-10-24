@@ -1,6 +1,20 @@
 ## Tensorflow-gpu環境安裝指南<br>
-1. 首先確保你還沒有安裝tensorflow或tensorflow-gpu<br>
-<console>
+1. 首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件<br>
+```console
+$ python3 -m pip uninstall keras
+$ python3 -m pip uninstall tensorflow
+$ python3 -m pip uninstall tensorflow-gpu
+```
+2. 開始安裝tensorflow-gpu(如果你要用gpu跑就必須裝tensorflow-gpu，但如果你想用CPU跑也沒差，就裝tensorflow或tensorflow-gpu都可以)<br>
+```console
+$ python3 -m pip install tensorflow-gpu
+```
+3. 裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，最直接查詢的方法如下<br>
+```console
+$ python3
+>>> import tensorflow
+```
+此時若你沒安裝cuda，
   
 
 ## Attention layer<br>
