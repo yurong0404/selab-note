@@ -69,13 +69,17 @@ $ nvidia-smi
 ```console
 $ sudo apt-get purge nvidia*
 ```
-裝顯卡驅動前，請必先照這指令執行，這指令在關掉 X server，別問我 X server是什麼，應該是跟GUI介面顯示相關的東西
+裝顯卡驅動前，請必先照這指令執行，這指令在關掉 X server，別問我 X server是什麼，應該是跟GUI介面顯示相關的東西，關掉後你的GUI介面(tty7)會先暫時失效<br>
 ```console
 $ sudo service lightdm stop
 ```
 ========= 以上做完再執行cuda安裝檔 ==============<br>
 ```console
 $ sudo sh ./cuda_10.0.130_410.48_linux.run   # 執行你的cuda安裝檔
+```
+剛剛上面有關掉X server的人，裝完cuda後可以再把它打開了
+```console
+$ sudo service lightdm st
 ```
 安裝過程，他大概會問你要不要建link路徑，選yes或no都沒差，還有安裝CUDA sample什麼的，不裝也沒差。<br>
 你裝完後就可以從tty1跳回GUI介面了，ctrl+alt+f7跳回GUI。裝完他最後的訊息應該有叫你要加cuda的資料夾到環境變數，請到~/.profile或者/etc/profile擇一檔案最底下加入這兩行，如果你cuda版本不是10.0就自己改一下。<br>
