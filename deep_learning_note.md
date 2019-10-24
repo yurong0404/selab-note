@@ -20,14 +20,14 @@ $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
 ### Step 3
 裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，有的還不一定正確，最直接查詢的方法如下，你需要的版本讓你自己的電腦來告訴你。<br>
 
-```console
+```python
 >>> import tensorflow
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
 此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如上的訊息：<br>
 此行代表你需安裝cuda 10.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔，這我這邊是載runfile的版本。<br>
 要是你沒有跳錯誤訊息，大概是tensorflow想用CPU跑，所以讓你過了，那你就在python shell用下面這個指令硬是trigger一下GPU，他就會跳錯誤訊息了。<br>
-```console
+```python
 >>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
@@ -95,8 +95,7 @@ $ source /etc/profile
 到這，沒意外的話，你算安裝cuda成功了。
 
 ### Step 5
-```console
-$ python3
+```python
 >>> import tensorflow
 ```
 安裝好cuda後，開始安裝cudnn。首先，測試一下，還有沒有跳出 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory的error，如果沒有，代表你cuda安裝成功。但沒意外的話你會改跳 ImportError: libcudnn.so.7: cannot open shared object file: No such file or dictionary 這樣的error，這意思是說你要裝cudnn 7的版本，到這邊隨便下載cudnn 7.X for cuda 10.0的檔案 https://developer.nvidia.com/rdp/cudnn-archive ，但當然如果你需要的cudnn不是7或是cuda不是10.0，那你就自己變通一下載你要的版本，下載前必須註冊登入NVIDIA帳號，沒帳號就安裝一下。<br><br>
@@ -110,13 +109,12 @@ $ sudo cp cuda/lib64/libcudnn* /usr/local/cuda/lib64
 $ sudo chmod a+r /usr/local/cuda/include/cudnn.h /usr/local/cuda/lib64/libcudnn*
 ```
 裝完後理論上就好了，測試一下你能不能import tensorflow了吧
-```console
-$ python3
+```python
 >>>import tensorflow
 ```
 如果還不能import，就見鬼了。<br>
 最後，執行這個確認你的tensorflow可以用GPU跑<br>
-```console
+```python
 >>> import tensorflow as tf
 >>> tf.test.is_gpu_avaiable()
 ```
