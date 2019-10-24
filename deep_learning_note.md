@@ -22,6 +22,7 @@ $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
 
 ```python
 >>> import tensorflow
+```console
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
 此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如上的訊息：<br>
@@ -34,7 +35,7 @@ ImportError: libcublas.so.10.0: cannot open shared object file: No such file or 
 ### Step 4
 安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
 如果你不知道你目前的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本，像我的是410.79。<br>
-```bash
+```console
 $ nvidia-smi
 +-----------------------------------------------------------------------------+
 | NVIDIA-SMI 410.79       Driver Version: 410.79       CUDA Version: 10.0     |
