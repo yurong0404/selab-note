@@ -14,7 +14,12 @@ $ python3 -m pip install tensorflow-gpu
 $ python3
 >>> import tensorflow
 ```
-此時若你沒安裝cuda，
+此時若你沒安裝cuda，必定會跳出錯誤訊息，如下：<br>
+
+```console
+>>> ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory
+```
+此行代表你需安裝cuda 9.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔
   
 
 ## Attention layer<br>
