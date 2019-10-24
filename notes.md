@@ -1,19 +1,23 @@
 ## Tensorflow-gpu環境安裝 on Ubuntu 指南<br>
 安裝深度學習環境需要有三樣東西，tensorflow、cuda和cudnn，cuda或tensorflow哪個先裝並不影響，但基於某些原因，我選擇先裝tensorflow。<br>
-1. 首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件，因此先把他們通通解安裝一遍，確保你沒安裝。這裡我假設你已經有python3和pip安裝工具。<br>
+
+### Step 1
+首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件，因此先把他們通通解安裝一遍，確保你沒安裝。這裡我假設你已經有python3和pip安裝工具。<br>
 
 ```console
 $ python3 -m pip uninstall keras
 $ python3 -m pip uninstall tensorflow
 $ python3 -m pip uninstall tensorflow-gpu
 ```
-2. 開始安裝tensorflow-gpu(如果你要用GPU訓練模型就必須裝tensorflow-gpu，但如果你想用CPU跑的話，就裝tensorflow或tensorflow-gpu都可以)，如果你有指定的tensorflow版本就後面加'=='和版本編號<br>
+### Step 2
+開始安裝tensorflow-gpu(如果你要用GPU訓練模型就必須裝tensorflow-gpu，但如果你想用CPU跑的話，就裝tensorflow或tensorflow-gpu都可以)，如果你有指定的tensorflow版本就後面加'=='和版本編號<br>
 ```console
 $ python3 -m pip install tensorflow-gpu==  # 如果你想看有哪些版本編號，可以這樣查
 $ python3 -m pip install tensorflow-gpu   # 如果沒特別指定版本，就這樣裝，自動安裝最新的版本
 $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
 ```
-3. 裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，有的還不一定正確，最直接查詢的方法如下，你需要的版本讓你自己的電腦來告訴你<br>
+### Step 3
+裝完後還需要安裝cuda toolkit和cudnn，但cuda toolkit和cudnn的版本必須裝相容於你安裝的tensorflow版本，網路上說明tensorflow對應的cuda、cudnn版本的文章五花八門，有的還不一定正確，最直接查詢的方法如下，你需要的版本讓你自己的電腦來告訴你<br>
 
 ```console
 >>> import tensorflow
@@ -26,8 +30,8 @@ ImportError: libcublas.so.10.0: cannot open shared object file: No such file or 
 >>> sess = tf.Session(config=tf.ConfigProto(log_device_placement=True))
 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
-
-4. 安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda會有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
+### Step 4
+安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda會有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
 如果你不知道你目前的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本，像我的是410.79<br>
 ```console
 $ nvidia-smi
@@ -84,8 +88,8 @@ $ source /etc/profile
 $ python3
 >>> import tensorflow
 ```
-
-5. 安裝好cuda後，開始安裝cudnn。首先，測試一下，還有沒有跳出 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory的error，如果沒有，代表你cuda安裝成功。但沒意外的話你會改跳 ImportError: libcudnn.so.7: cannot open shared object file: No such file or dictionary 這樣的error，這意思是說你要裝cudnn 7的版本，到這邊隨便下載cudnn 7.X for cuda 10.0的檔案 https://developer.nvidia.com/rdp/cudnn-archive ，但當然如果你需要的cudnn不是7或是cuda不是10.0，那你就自己變通一下載你要的版本，下載前必須註冊登入NVIDIA帳號，沒帳號就安裝一下。<br><br>
+### Step 5
+安裝好cuda後，開始安裝cudnn。首先，測試一下，還有沒有跳出 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory的error，如果沒有，代表你cuda安裝成功。但沒意外的話你會改跳 ImportError: libcudnn.so.7: cannot open shared object file: No such file or dictionary 這樣的error，這意思是說你要裝cudnn 7的版本，到這邊隨便下載cudnn 7.X for cuda 10.0的檔案 https://developer.nvidia.com/rdp/cudnn-archive ，但當然如果你需要的cudnn不是7或是cuda不是10.0，那你就自己變通一下載你要的版本，下載前必須註冊登入NVIDIA帳號，沒帳號就安裝一下。<br><br>
 
 載好cudnn後很簡單，就像下面這樣安裝<br>
 ```console
