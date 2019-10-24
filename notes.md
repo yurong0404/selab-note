@@ -1,4 +1,4 @@
-## Tensorflow-gpu環境安裝指南<br>
+## Tensorflow-gpu環境安裝 on Ubuntu 指南<br>
 安裝深度學習環境需要有三樣東西，tensorflow、cuda和cudnn，cuda或tensorflow哪個先裝並不影響，但基於某些原因，我選擇先裝tensorflow。<br>
 1. 首先確保你還沒有安裝tensorflow或tensorflow-gpu，有時keras也會影響tensorflow的套件，因此先把他們通通解安裝一遍，確保你沒安裝。這裡我假設你已經有python3和pip安裝工具。<br>
 
@@ -21,6 +21,13 @@ ImportError: libcublas.so.9.0: cannot open shared object file: No such file or d
 ```
 此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如上的訊息：<br>
 此行代表你需安裝cuda 9.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔<br>
+
+4. 安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda會有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
+如果你不知道你的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令:
+```console
+$ nvidia-smi
+```
+
   
 
 ## Attention layer<br>
