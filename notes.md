@@ -17,15 +17,42 @@ $ python3 -m pip install tensorflow-gpu==1.14.0   # 如果你想指定版本
 
 ```console
 >>> import tensorflow
-ImportError: libcublas.so.9.0: cannot open shared object file: No such file or directory
+ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory
 ```
 此時若你沒安裝cuda，必定會跳出錯誤訊息，從錯誤訊息中尋找如上的訊息：<br>
-此行代表你需安裝cuda 9.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔<br>
+此行代表你需安裝cuda 10.0版本，於是就去 https://developer.nvidia.com/cuda-toolkit-archive 下載安裝檔，這我這邊是載runfile的版本<br>
 
 4. 安裝cuda安裝檔前，必須要先裝好你的顯示卡driver，然而裝cuda會有規定你的顯卡驅動必須在某個版本以上，請從 https://tech.amikelive.com/node-930/cuda-compatibility-of-nvidia-display-gpu-drivers/ 這邊查看你要裝的cuda版本顯卡驅動最低要求是多少。<br><br>
-如果你不知道你的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令:
+如果你不知道你的顯卡驅動版本是多少的話，而且你GPU是NVIDIA的話，就下這指令就可以查看你的driver版本:<br>
 ```console
 $ nvidia-smi
++-----------------------------------------------------------------------------+
+| NVIDIA-SMI 410.79       Driver Version: 410.79       CUDA Version: 10.0     |
+|-------------------------------+----------------------+----------------------+
+| GPU  Name        Persistence-M| Bus-Id        Disp.A | Volatile Uncorr. ECC |
+| Fan  Temp  Perf  Pwr:Usage/Cap|         Memory-Usage | GPU-Util  Compute M. |
+|===============================+======================+======================|
+|   0  GeForce GTX 1080    Off  | 00000000:01:00.0  On |                  N/A |
+|  0%   44C    P8    15W / 200W |   8062MiB /  8116MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+|   1  GeForce GTX 1080    Off  | 00000000:03:00.0 Off |                  N/A |
+|  0%   48C    P8    13W / 200W |    123MiB /  8119MiB |      0%      Default |
++-------------------------------+----------------------+----------------------+
+                                                                               
++-----------------------------------------------------------------------------+
+| Processes:                                                       GPU Memory |
+|  GPU       PID   Type   Process name                             Usage      |
+|=============================================================================|
+|    0     12590      C   /usr/bin/python3                            7647MiB |
+|    0     29006      G   /usr/lib/xorg/Xorg                           192MiB |
+|    0     29572      G   compiz                                       165MiB |
+|    0     30886      G   ...uest-channel-token=14735455047927048595    45MiB |
+|    1     12590      C   /usr/bin/python3                             111MiB |
++-----------------------------------------------------------------------------+
+```
+如果說你還沒有裝GPU的driver的話，也沒關係，cuda的安裝檔執行後一開始就會先問你要不要幫你裝顯卡驅動，你可以選yes，他就會自己幫你裝好對的驅動版本<br>
+```console
+sudo sh ./cuda_10.0.130_410.48_linux.run   # 執行你的cuda安裝檔
 ```
 
   
