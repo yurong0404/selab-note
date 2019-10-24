@@ -83,7 +83,7 @@ $ sudo service lightdm start
 ```
 安裝過程，他大概會問你要不要建link路徑，選yes或no都沒差，還有安裝CUDA sample什麼的，不裝也沒差。<br>
 你裝完後就可以從tty1跳回GUI介面了，ctrl+alt+f7跳回GUI。裝完他最後的訊息應該有叫你要加cuda的資料夾到環境變數，請到~/.profile或者/etc/profile擇一檔案最底下加入這兩行，如果你cuda版本不是10.0就自己改一下。小知識：~/.profile會在你帳戶登入時執行，/etc/profile則是for all users。<br>
-```console
+```bash
 export PATH=$PATH:/usr/local/cuda-10.0/bin
 export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:/usr/local/cuda-10.0/lib64
 ```
