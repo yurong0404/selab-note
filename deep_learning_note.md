@@ -65,9 +65,13 @@ $ nvidia-smi
 如果你沒要裝驅動，就直接在GUI介面安裝cuda就好<br>
 
 ====== 如果你要裝驅動，先執行這段，如果沒有要裝驅動，就可以直接執行cuda安裝檔 =======<br>
+如果你顯卡驅動版本太舊，先執行這行刪除你原本的驅動，如果最後訊息有跳出autoremove什麼的，就照他說的執行。<br>
 ```console
-$ sudo apt-get purge nvidia*  # 如果你顯卡驅動版本太舊，先執行這行刪除你原本的驅動，如果最後訊息有跳出autoremove什麼的，就照他說的執行。
-$ sudo service lightdm stop   # 裝顯卡驅動前，請必先照這指令執行，這指令在關掉 X server，別問我 X server是什麼，應該是跟螢幕顯示相關的東東
+$ sudo apt-get purge nvidia*
+```
+裝顯卡驅動前，請必先照這指令執行，這指令在關掉 X server，別問我 X server是什麼，應該是跟GUI介面顯示相關的東西
+```console
+$ sudo service lightdm stop
 ```
 ========= 以上做完再執行cuda安裝檔 ==============<br>
 ```console
