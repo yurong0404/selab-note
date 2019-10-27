@@ -98,7 +98,7 @@ $ source /etc/profile
 ```bash
 >>> import tensorflow
 ```
-安裝好cuda後，開始安裝cudnn。首先，測試一下，還有沒有跳出 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory的error，如果沒有，代表你cuda安裝成功。但沒意外的話你會改跳 ImportError: libcudnn.so.7: cannot open shared object file: No such file or dictionary 這樣的error，這意思是說你要裝cudnn 7的版本，到這邊隨便下載cudnn 7.X for cuda 10.0的檔案 https://developer.nvidia.com/rdp/cudnn-archive ，但當然如果你需要的cudnn不是7或是cuda不是10.0，那你就自己變通一下載你要的版本，下載前必須註冊登入NVIDIA帳號，沒帳號就安裝一下。<br><br>
+安裝好cuda後，開始安裝cudnn。首先，測試一下，還有沒有跳出 ImportError: libcublas.so.10.0: cannot open shared object file: No such file or directory的error，如果沒有，代表你cuda安裝成功。但沒意外的話你會改跳 ImportError: libcudnn.so.7: cannot open shared object file: No such file or dictionary 這樣的error，這意思是說你要裝cudnn 7的版本，到這邊隨便下載cudnn 7.X for cuda 10.0的檔案 https://developer.nvidia.com/rdp/cudnn-archive ，但當然如果你需要的cudnn不是7或是cuda不是10.0，那你就自己變通一下載你要的版本，下載前必須註冊登入NVIDIA帳號，沒帳號就註冊一下。<br><br>
 
 
 載好cudnn後很簡單，就像下面這樣安裝<br>
