@@ -1,4 +1,5 @@
 ## UNIX 筆記
-```sh
-ls /proc/
+```console
+ls /proc/pid/fd
+cat /proc/net/tcp
 ```
