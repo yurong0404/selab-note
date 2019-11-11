@@ -42,11 +42,13 @@ $ gdb test
 (gdb) info registers
 ```
 ### 查看變數值，或者呼叫函式
+> 打CTF好像蠻好用的
 ```console
 (gdb) print i
 (gdb) print get_flag()
 ```
 ### 查看assembly
+> 離開layout畫面，就ctrl+x a
 ```console
 (gdb) layout asm
 ```
