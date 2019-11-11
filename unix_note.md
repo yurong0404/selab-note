@@ -57,3 +57,5 @@ $ gdb test
 > 以下都是親自透過觀察得出的結論
 ### stack
 > 在main function內的變數都存在stack裡面，pointer也是，pointer會在stack內儲存該pointer指向的address<br>
+## malloc
+> 在function裡面malloc，即使跳出function外，也依舊要自己負責，如果不free掉，即使已經結束function，依舊佔空間。
