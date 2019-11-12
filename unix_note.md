@@ -52,7 +52,7 @@ $ gdb test
 ```console
 (gdb) layout asm
 ```
-
+***
 ## Memory 配置
 > 以下都是親自透過觀察得出的結論
 ### stack
