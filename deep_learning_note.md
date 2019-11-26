@@ -138,3 +138,13 @@ video: https://youtu.be/oaV_Fv5DwUM<br>
 ## Softmax<br>
 > 把輸入為不是機率分布的array，轉成是機率分布的array。<br>
 例如：長度為64的array數值都介於-1到1，經過softmax應變為，64個range介於0到1的值，且64個數字相加為1。
+
+## Validset的功用<br>
+> 用來檢視model的訓練結果，這樣就能比較不同種的hyper-parameter組合訓練出來的model那個比較好。但不能拿testing set來做valid set的事情，因為訓練model時不知道外面世界的data長怎樣，所以要預留一份testing set當作未知的data。不然如果拿testing set來挑選hyper-parameter會有失公正。
+
+## V-fold cross validation (V-fold CV)<br>
+>  有可能很衰，用validset挑出的hyper-parameter其實不一定對testing set的accuracy比較好，這種情況通常發生在data比較小的時候。所以才會使用V-fold CV。首先要將training set切成V等分，取其中一等份當作validset，然後針對這V種切法訓練出V個同樣hyper-parameter的model，分別算出validset的accuracy，最後將V個validset accuracy取平均，就不會很衰了(因為樣本數大)，如此一來在挑選hyper-parameter就不太可能會挑到很衰的情況。結論是：V-fold CV的用途只是幫助挑選哪組hyper-parameter比較好，而不是幫助你訓練很強的model。注意：挑出hyper-parameter後，最終model請連同validset一起下去訓練，因為validset的任務已達成，可以功成身退，併入training set。
+
+
+
+
