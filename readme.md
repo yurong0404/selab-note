@@ -78,14 +78,14 @@ dataset: https://github.com/EdinburghNLP/code-docstring-corpus<br>
 *Xing Hu et al.*<br>
 paper: https://xin-xia.github.io/publication/icpc182.pdf<br>
 dataset: https://github.com/xing-hu/DeepCom<br>
-> Source code summarization，縮寫DeepCom，比CODE-NN強，使用了自創的方法描述AST，因為傳統travesal approach(pre-order、post-order)還原的AST無法唯一。使用Seq2seq model，encoder和decoder都是LSTM，word embedding和hidden state都是512維，使用BLEU-4度量生成的句子。
+> Source code summarization，縮寫DeepCom，比CODE-NN強，使用了自創的方法描述AST，因為傳統travesal approach(pre-order、post-order)還原的AST無法唯一。使用Seq2seq model，encoder和decoder都是LSTM，word embedding和hidden state都是512維，使用BLEU-4度量生成的句子。Dataset很多重複data。
 ***
 
 * [13] Automatic Source Code Summarization with Extended Tree-LSTM, 2019<br>
 *Yusuke Shido et al.*<br>
 paper: https://arxiv.org/pdf/1906.08094.pdf<br>
 source code: https://github.com/sh1doy/summarization_tf<br>
-> Source code summarization，比DeepCom和CODE-NN強，dataset取自DeepCom。
+> Source code summarization，比DeepCom和CODE-NN強，dataset取自DeepCom。這世界上除了LSTM之外，還有Tree-LSTM，它不像LSTM是那種sequence順序的，而是以tree的結構訓練，看一下論文裡的figure 2(c)就能明白。Tree-LSTM又依照他cell裡計算方式的不同分兩種，一種是child-sum Tree-LSTM，另一種是N-ary Tree-LSTM。但由於傳統Tree-LSTM不能handle tree中任意數量的子節點，所以作者提出Tree-LSTM的改良版，Extended Tree-LSTM，也稱為multi-way Tree-LSTM。最後的BLEU4結果，我不明白為何可以那麼低，只有0.2左右，我猜是他code沒寫好，因為DeepCom跟我自己訓練都至少0.35。他在dataset的部分一樣沒有解決DeepCom的dataset有重複的data的問題。
 ***
 
 * [14] Recommendations for Datasets for Source Code Summarization, 2019<br>
