@@ -39,7 +39,7 @@ https://hyper.is/<br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/HyperHomepage.PNG)
 
 ### Step2:
-安裝完後桌面應該會出現Hyper的捷徑，執行之後，它會預設執行Windows內建的操作介面。<br>
+安裝完後桌面應該會出現Hyper的捷徑，執行之後，它會預設執行Windows內建的命令提示字元(cmd.exe)。<br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/HyperDefaultcmd.PNG)
 
 ### Step3:
@@ -66,6 +66,7 @@ https://hyper.is/<br>
 
 ---
 ## 修改bash的預設路徑
+由於每次進入bash都給我跑到Windows的路徑下，有夠麻煩，所以我要把它改成在Ubuntu的帳戶路徑下。<br>
 注意:在bash裡Windows的本機路徑在/mnt底下，要注意別刪到之類的<br>
 
 ### Step1:
@@ -90,4 +91,10 @@ fi
 cd /home/yurong
 ```
 
-如此就大功告成，你只要執行Hyper程式即可進入Ubuntu的bash環境，做一些Linux的操作就方便許多啦!哈哈哈哈哈哈哈...哈哈哈哈哈
+### Step3:
+重開Hyper，就會發現，根本就跟開Ubuntu的terminal感覺一模一樣啦!<br>
+![image](https://github.com/yurong0404/selab-note/blob/master/img/HyperPerfect.PNG)
+如此就大功告成，你只要執行Hyper程式即可進入Ubuntu的bash環境，做一些Linux的操作就方便許多啦!
+<br>哈哈哈哈哈哈哈...
+<br>哈哈哈哈哈
+<br>...
