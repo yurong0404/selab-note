@@ -73,6 +73,7 @@ https://hyper.is/<br>
 ```console
 > vim /home/yurong/.bashrc
 ```
+### Step2:
 把檔案的最後新增一行指令，cd /home/yurong，如此在開啟bash的時候都會先把路徑改到home目錄<br>
 ```console
 # enable programmable completion features (you don't need to enable
@@ -88,3 +89,5 @@ fi
 
 cd /home/yurong
 ```
+
+如此就大功告成，你只要執行Hyper程式即可進入Ubuntu的bash環境，做一些Linux的操作就方便許多啦!哈哈哈哈哈哈哈...哈哈哈哈哈
