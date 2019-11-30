@@ -42,7 +42,6 @@ https://hyper.is/<br>
 安裝完後桌面應該會出現Hyper的捷徑，執行之後，它會預設執行Windows內建的操作介面。<br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/HyperDefaultcmd.PNG)
 
-<br>
 ### Step3:
 這時我們要把預設操作介面改成Ubuntu的bash，請到Hyper介面左上角的三條槓->Edit->Preferences，並將shell的屬性修改成以下的路徑，並儲存。<br>
 ```console
@@ -61,7 +60,6 @@ https://hyper.is/<br>
     shell: 'C:\\Windows\\System32\\bash.exe',
 ```
 
-<br>
 ### Step4:
 重開Hyper之後應該就能發現它自動進入Ubuntu的bash shell了。<br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/HyperDefaultDirectory.PNG)
