@@ -1,4 +1,4 @@
-這篇是在教你如何在Windows 10上裝一個Ubuntu的系統
+## 這篇是在教你如何在Windows 10上裝一個Ubuntu的系統
 
 ## Windows 10設定
 ### Step1:
@@ -23,9 +23,14 @@
 ### Step3:
 > 安裝完它後，在Windows搜尋Ubuntu並執行它，此時它會開始在你的Windows安裝一個Ubuntu的子系統，版本應該是Ubuntu當前最新版本，安裝過程你會需要輸入帳戶名稱和密碼。<br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/SearchUbuntu2.PNG)
-<br><br>安裝<br>
+
+### Step4:
+> 安裝
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/InstallUbuntu.PNG)
-<br><br>安裝完成後你可以在Windows search執行Ubuntu或者bash，就可以執行Ubuntu的bash了，正常使用Linux指令也沒問題。你也可以選擇在cmd.exe輸入bash亦可以進入Ubuntu的bash。<br><br>
+<br><br>
+
+### Step5:
+> 安裝完成後你可以在Windows search執行Ubuntu或者bash，就可以執行Ubuntu的bash了，正常使用Linux指令也沒問題。你也可以選擇在cmd.exe輸入bash亦可以進入Ubuntu的bash。<br><br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/cmdexe.PNG)
 <br>
 
