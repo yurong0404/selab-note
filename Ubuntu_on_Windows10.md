@@ -35,10 +35,9 @@
 
 ### Step1:
 到它的官網下載Windows版本，並安裝。<br>
-https://hyper.is/ <br>
+https://hyper.is/<br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/HyperHomepage.PNG)
 
-<br>
 ### Step2:
 安裝完後桌面應該會出現Hyper的捷徑，執行之後，它會預設執行Windows內建的操作介面。<br>
 ![image](https://github.com/yurong0404/selab-note/blob/master/img/HyperDefaultcmd.PNG)
