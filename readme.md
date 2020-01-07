@@ -101,3 +101,9 @@ paper: https://ieeexplore.ieee.org/document/8813269<br>
 > 待讀
 ***
 
+* [16] METEOR: An Automatic Metric for MT Evaluation with Improved Correlation with Human Judgments
+*Satanjeev Banerjee and Alon Lavie*<br>
+paper: https://www.aclweb.org/anthology/W05-0909.pdf
+> 待讀
+***
+
