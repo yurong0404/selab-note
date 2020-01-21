@@ -58,3 +58,30 @@ rip是當前指令執行到哪，rbp是fucntion在stack的base，rsp是stack的�
 在main function內的變數都存在stack裡面，pointer也是，pointer會在stack內儲存該pointer指向的address<br>
 ### malloc
 在function裡面malloc，即使跳出function外，也依舊要自己負責，如果不free掉，即使已經結束function，依舊佔空間。
+### 程式在stack中的狀態
+
+
+|                       |                 stack                  |
+| ---------------------:|:--------------------------------------:|
+|        low addr       |                                        |
+|                       |                unused                  |
+|          rsp ->       |     variable in function B (rbp-0xc)   |
+|                       |     variable in function B (rbp-0x8)   |
+|                       |     variable in function B (rbp-0x4)   |
+|  rbp of function B -> |            rbp of function A           |
+|                       |   ret address in A (after function B)  |
+|                       |       parameter #1 of B (rbp+0x4)      |
+|                       |       parameter #2 of B (rbp+0x8)      |
+|                       |     variable in function A (rbp-0x8)   |
+|                       |     variable in function A (rbp-0x4)   |
+|  rbp of function A -> |         rbp of main function           |
+|                       | ret address in main (after function A) |
+|                       |       parameter #1 of A (rbp+0x4)      |
+|                       |       parameter #2 of A (rbp+0x8)      |
+|                       |       parameter #3 of A (rbp+0xc)      |
+|                       |          variable in main (rbp-0x8)    |
+|                       |          variable in main (rbp-0x4)    |
+|     rbp of main ->    |     ret address after main function    |
+|       high addr       |                                        |
+
+程式進入function前，會先把參數push進stack，而且順序是從最後一個參數往第一個參數push，這樣在function內取第一個參數就rbp+0x4，第二個參數就rbp+0x8，依此類推，然後再push return address，然後push caller的rbp，然後才是依序push function會用到的local variable。
