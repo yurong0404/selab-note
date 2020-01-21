@@ -59,6 +59,7 @@ rip是當前指令執行到哪，rbp是fucntion在stack的base，rsp是stack的�
 ### malloc
 在function裡面malloc，即使跳出function外，也依舊要自己負責，如果不free掉，即使已經結束function，依舊佔空間。
 
+***
 ## 程式在stack中的狀態
 
 |                       |                 stack                  |
