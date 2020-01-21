@@ -4,7 +4,7 @@
 $ sudo apt install tmux
 ```
 ### 介紹
-當你使用ssh遠端連線至server，然後你需要執行一個長時間運行的程式（例如訓練深度學習模型），此時儘管你使該process背景運行，一但你的terminal登出了，你執行的所有process也會跟著結束
+當你使用ssh遠端連線至server，然後你需要執行一個長時間運行的程式（例如訓練深度學習模型），此時儘管你使該process背景運行，一旦你的terminal登出了，你執行的所有process也會跟著結束
 ```console
 $ python3 train.py &
 $ logout
@@ -19,7 +19,7 @@ $ tmux
 ```console
 $ python3 train.py
 ```
-再來輸入<kbd>ctrl</kbd>+<kbd>b</kbd>然後<kbd>d</kbd>，即可離開該session，並回到原本的ssh連線的介面，之後即使你有無結束ssh連線，tmux的session都會繼續運行<br>
+再來輸入<kbd>ctrl</kbd>+<kbd>b</kbd>然後<kbd>d</kbd>，即可離開該session，並回到原本的ssh連線的介面，之後不管你有無結束ssh連線，tmux的session都會繼續運行<br>
 當你過一段時間，想查看tmux的session狀態，輸入以下指令，即可重新進入session
 ```console
 $ tmux attach
