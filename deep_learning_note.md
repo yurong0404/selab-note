@@ -145,6 +145,7 @@ video: https://youtu.be/oaV_Fv5DwUM<br>
 ## V-fold cross validation (V-fold CV)<br>
 >  有可能很衰，用validset挑出的hyper-parameter其實不一定對testing set的accuracy比較好，這種情況通常發生在data比較小的時候。所以才會使用V-fold CV。首先要將training set切成V等分，取其中一等份當作validset，然後針對這V種切法訓練出V個同樣hyper-parameter的model，分別算出validset的accuracy，最後將V個validset accuracy取平均，就不會很衰了(因為樣本數大)，如此一來在挑選hyper-parameter就不太可能會挑到很衰的情況。結論是：V-fold CV的用途只是幫助挑選哪組hyper-parameter比較好，而不是幫助你訓練很強的model。注意：挑出hyper-parameter後，最終model請連同validset一起下去訓練，因為validset的任務已達成，可以功成身退，併入training set。
 
-
+## LSTM和GRU的觀念
+> https://youtu.be/8HyCNIVRbSU
 
 
