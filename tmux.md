@@ -29,5 +29,21 @@ tmux亦可新增多個session，輸入以下指令可檢視session列表
 $ tmux list-sessions
 ```
 若你在tmux的session內想關閉你所在的session，輸入<kbd>ctrl</kbd>+<kbd>b</kbd>然後<kbd>:</kbd>然後`kill-session`，即可關閉session
+s
+### 更改session名稱
+```console
+$ tmux rename-session -t oldname newname
+```
+
+### 建立特定名稱之session
+```console
+$ tmux new -s newname
+```
+
+### 連回特定名稱之session
+```console
+$ tmux attach -t session-name
+```
+
 ### 更多資訊
 https://askubuntu.com/questions/8653/how-to-keep-processes-running-after-ending-ssh-session
