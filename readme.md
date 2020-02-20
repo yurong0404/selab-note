@@ -101,9 +101,14 @@ paper: https://ieeexplore.ieee.org/document/8813269<br>
 > 待讀
 ***
 
-* [16] METEOR: An Automatic Metric for MT Evaluation with Improved Correlation with Human Judgments
+* [16] METEOR: An Automatic Metric for MT Evaluation with Improved Correlation with Human Judgments<br>
 *Satanjeev Banerjee and Alon Lavie*<br>
 paper: https://www.aclweb.org/anthology/W05-0909.pdf
 > 待讀
 ***
+
+* [17] Automatic Documentation Generation via Source Code Summarization of Method Context<br>
+*Paul W. McBurney and Collin McMillan*<br>
+paper: https://www3.nd.edu/~cmc/papers/mcburney_icpc_2014.pdf
+> 用非deep learning的方法生成程式碼註解
 
