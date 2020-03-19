@@ -32,22 +32,22 @@ $ tmux list-sessions
 s
 ### 更改session名稱
 ```console
-$ tmux rename-session -t oldname newname
+$ tmux rename-session -t [oldname] [newname]
 ```
 
 ### 建立特定名稱之session
 ```console
-$ tmux new -s newname
+$ tmux new -s [newname]
 ```
 
 ### 連回特定名稱之session
 ```console
-$ tmux attach -t sessionName
+$ tmux attach -t [sessionName]
 ```
 
 ### 關閉特定名稱之session
 ```
-$ tmux kill-session -t sessionName
+$ tmux kill-session -t [sessionName]
 ```
 
 ### 更多資訊
