@@ -42,7 +42,12 @@ $ tmux new -s newname
 
 ### 連回特定名稱之session
 ```console
-$ tmux attach -t session-name
+$ tmux attach -t sessionName
+```
+
+### 關閉特定名稱之session
+```
+$ tmux kill-session -t sessionName
 ```
 
 ### 更多資訊
