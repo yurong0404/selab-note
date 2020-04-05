@@ -60,6 +60,10 @@ rip是當前指令執行到哪，rbp是fucntion在stack的base，rsp是stack的�
 在function裡面malloc，即使跳出function外，也依舊要自己負責，如果不free掉，即使已經結束function，依舊佔空間。
 
 ***
+## User mode, kernel mode, system call的關係
+https://www.ptt.cc/bbs/b97902HW/M.1267018497.A.3B1.html
+
+***
 ## 程式在stack中的狀態
 
 |                       |                 stack                  |
