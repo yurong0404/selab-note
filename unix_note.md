@@ -19,6 +19,10 @@ $ gdb test
 ```console
 (gdb) b main
 ```
+也可以停在特定位址，前面加個*即可
+```console
+(gdb) b *main+100
+```
 也可以停頓在特定行數，這是停頓在12行<br>
 ```console
 (gdb) b 12
@@ -45,6 +49,15 @@ rip是當前指令執行到哪，rbp是fucntion在stack的base，rsp是stack的�
 ```console
 (gdb) print i
 (gdb) print get_flag()
+```
+### 查看特定記憶體位址的value (x = hexadecimal)，10代表顯示十行
+```console
+(gdb) x/10x 0x12345678
+(gdb) x/10g 0x12345678
+```
+### 查看特定位址的value，並翻譯成組語(i = instruction)
+```console
+(gdb) x/10i 0x12345678
 ```
 ### 查看assembly
 離開layout畫面，就<kbd>ctrl</kbd>+<kbd>x</kbd>然後<kbd>a</kbd>
