@@ -119,19 +119,25 @@ paper: https://ieeexplore.ieee.org/document/6062165
 > 用非deep learning的方法生出function的數個關鍵字，幫助工程師了解該function的用途
 ***
 
-* [19] Towards Automatically Generating Summary Comments for Java Methods <br>
+* [19] On the Use of Automated Text Summarization Techniques for Summarizing Source Code <br>
+*Sonia Haiduc et al.*<br>
+paper: https://ieeexplore.ieee.org/document/5645482
+> 用非deep learning的方法生出function的數個關鍵字，幫助工程師了解該function的用途，作者為[18]的作者，所以做法很類似
+***
+
+* [20] Towards Automatically Generating Summary Comments for Java Methods <br>
 *Giriprasad Sridhara et al.*<br>
 paper: https://dl.acm.org/doi/pdf/10.1145/1858996.1859006
 > 用非deep learning的方法描述function的行為，然而該方法使用的工具已經連結失效
 ***
 
-* [20] Generating Natural Language Summaries for Crosscutting Source Code Concerns <br>
+* [21] Generating Natural Language Summaries for Crosscutting Source Code Concerns <br>
 *Sarah Rastkar et al.*<br>
 paper: https://ieeexplore.ieee.org/document/6080777
 > 主要針對一個project中的function，找出與該function具有耦合性的物件，並用一篇summary列出說明，如附檔圖一所示。其輸出的內容非描述function的行為，而是描述該function與哪些物件耦合
 ***
 
-* [21] Natural Language Models for Predicting Programming Comments <br>
+* [22] Natural Language Models for Predicting Programming Comments <br>
 *Dana Movshovitz-Attias et al.*<br>
 paper: https://pdfs.semanticscholar.org/4a90/8858ba9223289c3b3b1d5ceceb9c70a78d6e.pdf
 > 目的為針對一個function註解進行auto completion，對寫到一半的註解，進行自動生成，以加速工程師撰寫註解的速度。例如某個function的註解為“Train a named-entity extractor”，當工程師撰寫到”Train a named-“時，該論文的工具可根據程式碼自動完成”Train a named-entity“，而工程師再次撰寫至”Train a named-entity ext“時，該論文的工具可自動完成”Train a named-entity extractor“
