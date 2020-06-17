@@ -141,3 +141,9 @@ paper: https://ieeexplore.ieee.org/document/6080777
 *Dana Movshovitz-Attias et al.*<br>
 paper: https://pdfs.semanticscholar.org/4a90/8858ba9223289c3b3b1d5ceceb9c70a78d6e.pdf
 > 目的為針對一個function註解進行auto completion，對寫到一半的註解，進行自動生成，以加速工程師撰寫註解的速度。例如某個function的註解為“Train a named-entity extractor”，當工程師撰寫到”Train a named-“時，該論文的工具可根據程式碼自動完成”Train a named-entity“，而工程師再次撰寫至”Train a named-entity ext“時，該論文的工具可自動完成”Train a named-entity extractor“
+***
+
+* [23] Automatic Generation of Natural Language Summaries for Java Classes <br>
+*Laura Moreno et al.*<br>
+paper: https://ieeexplore.ieee.org/document/6613830
+> 針對Java class進行class分類，並根據他的分類和內容對class生成一句註解
