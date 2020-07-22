@@ -66,3 +66,109 @@ Uninstalling jieba-0.42.1:
 Proceed (y/n)? y
   Successfully uninstalled jieba-0.42.1
 ```
+## 檢查你過去安裝的套件路徑
+你可能看完上面的說明，會開始好奇，我以前到底都把套件裝去哪了，以下為查看tensorflow的套件路徑範例(要先import才能看路徑)<br>
+```bash
+$ python3
+Python 3.5.2 (default, Apr 16 2020, 17:47:17) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>> import tensorflow
+>>> tensorflow.__path__
+['/home/yurong/.local/lib/python3.5/site-packages/tensorflow']
+```
+好的，根據上面的範例的路徑意思就是我tensorflow裝在我自己的路徑下。<br>
+然後下面這個範例是我裝到公共路徑下<br>
+```bash
+>>> import jieba
+>>> jieba.__path__
+['/usr/local/lib/python3.5/dist-packages/jieba']
+```
+
+# python的版本問題
+觀察一下以下指令<br>
+```bash
+$ which python3
+/usr/bin/python3
+$ ls -al /usr/bin/python*
+lrwxrwxrwx 1 root root       9  7月 23 01:03 /usr/bin/python3 -> python3.5
+-rwxr-xr-x 1 root root 4456208  7月 22 23:19 /usr/bin/python3.5
+lrwxrwxrwx 1 root root      33  4月 17 23:25 /usr/bin/python3.5-config -> x86_64-linux-gnu-python3.5-config
+-rwxr-xr-x 1 root root 4456208  4月 17 23:25 /usr/bin/python3.5m
+lrwxrwxrwx 1 root root      34  4月 17 23:25 /usr/bin/python3.5m-config -> x86_64-linux-gnu-python3.5m-config
+-rwxr-xr-x 2 root root 4727904 12月 20  2019 /usr/bin/python3.6
+-rwxr-xr-x 2 root root 4727904 12月 20  2019 /usr/bin/python3.6m
+lrwxrwxrwx 1 root root      16  3月 23  2016 /usr/bin/python3-config -> python3.5-config
+lrwxrwxrwx 1 root root      10 12月 11  2018 /usr/bin/python3m -> python3.5m
+lrwxrwxrwx 1 root root      17  3月 23  2016 /usr/bin/python3m-config -> python3.5m-config
+```
+你可以發現你平常輸入的python3其實是一個link file指到python3.5，如果你想要把版本改成python3.6，可以做以下指令把link改指到3.6<br>
+```bash
+$ cd /usr/bin
+$ unlink python3
+$ ln -s python3.6 python3
+$ ls -al /usr/bin/python3* 
+lrwxrwxrwx 1 root root       9  7月 23 00:58 /usr/bin/python3 -> python3.6
+-rwxr-xr-x 1 root root 4456208  7月 22 23:19 /usr/bin/python3.5
+lrwxrwxrwx 1 root root      33  4月 17 23:25 /usr/bin/python3.5-config -> x86_64-linux-gnu-python3.5-config
+-rwxr-xr-x 1 root root 4456208  4月 17 23:25 /usr/bin/python3.5m
+lrwxrwxrwx 1 root root      34  4月 17 23:25 /usr/bin/python3.5m-config -> x86_64-linux-gnu-python3.5m-config
+-rwxr-xr-x 2 root root 4727904 12月 20  2019 /usr/bin/python3.6
+-rwxr-xr-x 2 root root 4727904 12月 20  2019 /usr/bin/python3.6m
+lrwxrwxrwx 1 root root      16  3月 23  2016 /usr/bin/python3-config -> python3.5-config
+lrwxrwxrwx 1 root root      10 12月 11  2018 /usr/bin/python3m -> python3.5m
+lrwxrwxrwx 1 root root      17  3月 23  2016 /usr/bin/python3m-config -> python3.5m-config
+```
+之後你要安裝套件，就也會自動安裝到python3.6的版本，如['/home/yurong/.local/lib/python3.ˊ/site-packages/']或['/usr/local/lib/python3.6/dist-packages/']路徑底下<br>
+
+而管理python版本，還有另一個方法，就是使用update-alternatives，相關說明看以下網址<br>
+https://www.itread01.com/content/1544468787.html<br>
+我以下紀錄一下，實用的指令<br>
+這是對某個特定版本的python，給予priority，數值越高，就越優先使用該版本，下面的範例就是會優先使用python3.6因為priority是3，是最高的。<br>
+```bash
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python2.7 1
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.5 2
+$ sudo update-alternatives --install /usr/bin/python python /usr/bin/python3.6 3
+```
+而以下指令是更改要使用哪個版本的python<br>
+```bash
+$ sudo update-alternatives --config python
+There are 3 choices for the alternative python (providing /usr/bin/python).
+
+  Selection    Path                Priority   Status
+------------------------------------------------------------
+  0            /usr/bin/python3.6   3         auto mode
+  1            /usr/bin/python2.7   1         manual mode
+* 2            /usr/bin/python3.5   2         manual mode
+  3            /usr/bin/python3.6   3         manual mode
+
+Press <enter> to keep the current choice[*], or type selection number: 0
+$
+$ python
+Python 3.6.10 (default, Dec 19 2019, 23:04:32) 
+[GCC 5.4.0 20160609] on linux
+Type "help", "copyright", "credits" or "license" for more information.
+>>>
+```
+如果使用update-alternatives做python版本管理的話，安裝套件用python安裝亦可，python3亦可，以下兩種指令都可以達到一樣的目的<br>
+```bash
+$ python -m pip install jieba --user
+```
+```bash
+$ python3 -m pip install jieba --user
+```
+因為python和python3都是指向一樣的版本，下列指令可證明<br>
+```bash
+$ which python
+/usr/bin/python
+$ ls -al /usr/bin/python*
+lrwxrwxrwx 1 root root      24  7月 22 23:27 /usr/bin/python -> /etc/alternatives/python
+$ ls -al /etc/alternatives/python
+lrwxrwxrwx 1 root root 18  7月 23 01:12 /etc/alternatives/python -> /usr/bin/python3.6
+```
+```bash
+$ which python3
+/usr/bin/python3
+$ ls -al /usr/bin/python3
+lrwxrwxrwx 1 root root 9  7月 23 01:23 /usr/bin/python3 -> python3.6
+```
