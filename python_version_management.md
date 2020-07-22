@@ -121,6 +121,7 @@ lrwxrwxrwx 1 root root      17  3月 23  2016 /usr/bin/python3m-config -> python
 ```
 之後你要安裝套件，就也會自動安裝到python3.6的版本，如['/home/yurong/.local/lib/python3.ˊ/site-packages/']或['/usr/local/lib/python3.6/dist-packages/']路徑底下<br>
 
+# 使用update-alternatives做python版本管理
 而管理python版本，還有另一個方法，就是使用update-alternatives，相關說明看以下網址<br>
 https://www.itread01.com/content/1544468787.html<br>
 我以下紀錄一下，實用的指令<br>
