@@ -90,7 +90,7 @@ Type "help", "copyright", "credits" or "license" for more information.
 ```bash
 $ which python3
 /usr/bin/python3
-$ ls -al /usr/bin/python*
+$ ls -al /usr/bin/python3*
 lrwxrwxrwx 1 root root       9  7月 23 01:03 /usr/bin/python3 -> python3.5
 -rwxr-xr-x 1 root root 4456208  7月 22 23:19 /usr/bin/python3.5
 lrwxrwxrwx 1 root root      33  4月 17 23:25 /usr/bin/python3.5-config -> x86_64-linux-gnu-python3.5-config
