@@ -15,5 +15,5 @@ git remote set-url origin https://<your_token>@github.com/<USERNAME>/<REPO>.git
 ```
 
 ### Step4:
-> push commit
+> push commit<br>
 > ![image](https://github.com/yurong0404/selab-note/blob/master/img/PersonalAccessToken_4.PNG)
