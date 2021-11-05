@@ -173,3 +173,10 @@ $ which python3
 $ ls -al /usr/bin/python3
 lrwxrwxrwx 1 root root 9  7月 23 01:23 /usr/bin/python3 -> python3.6
 ```
+
+
+# 在jupyter notebook新增不同的python kernel
+輸入以下指令，就可以在當下環境的python3加入jupyter notebook
+```bash
+$ ipython kernel install --name "myenv" --user
+```
