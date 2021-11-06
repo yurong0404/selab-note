@@ -190,6 +190,5 @@ $ jupyter kernelspec list
 ```
 刪除python kernel
 ```bash
-$
 $ jupyter kernelspec uninstall myenv
 ```
