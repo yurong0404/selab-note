@@ -176,7 +176,20 @@ lrwxrwxrwx 1 root root 9  7月 23 01:23 /usr/bin/python3 -> python3.6
 
 
 # 在jupyter notebook新增不同的python kernel
-輸入以下指令，就可以在當下環境的python3加入jupyter notebook
+首先先安裝ipykernel
 ```bash
-$ ipython kernel install --name "myenv" --user
+$ python3 -m pip install ipykernel
+```
+然後輸入以下指令，就可以在當下環境的python3加入jupyter notebook，並給定你想給的名稱"myenv"
+```bash
+$ python3 -m ipykernel install --name "myenv" --user
+```
+看看你有哪些python kernel
+```bash
+$ jupyter kernelspec list
+```
+刪除python kernel
+```bash
+$
+$ jupyter kernelspec uninstall myenv
 ```
